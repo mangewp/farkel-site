@@ -1,4 +1,22 @@
-/* Make body background and text color consistent */
+@font-face {
+  font-family: 'Excrallik';
+  src: url('/fonts/Excrallik (regular).woff2') format('woff2'),
+       url('/fonts/Excrallik (regular).woff') format('woff'),
+       url('/fonts/Excrallik (regular).ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Excrallik';
+  src: url('/fonts/Excrallik (italic).woff2') format('woff2'),
+       url('/fonts/Excrallik (italic).woff') format('woff'),
+       url('/fonts/Excrallik (italic).ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
 body {
   background: #23272f;
   color: #fff;
@@ -7,14 +25,14 @@ body {
   padding: 0;
   overflow: hidden;
   overflow-y: auto;
-  font-family: "VT323", monospace;
-  
+  font-family: "Excrallik", monospace;
 }
+
 html, body {
   overflow-x: hidden;
 }
 
-/* Responsive container for Home */
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +52,7 @@ html, body {
   }
 }
 
-/* Make headings responsive */
+
 .home-container h1 {
   font-size: 2rem;
 }
@@ -52,7 +70,7 @@ html, body {
 
 .cards-container {
   min-height: 100vh;
-  padding: 0 1rem; /* Adds space on left/right for mobile */
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 

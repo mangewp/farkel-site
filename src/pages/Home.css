@@ -3,7 +3,7 @@
   min-height: 100vh;
   background: #181818;
   color: #fff;
-  font-family: sans-serif;
+  font-family: inherit;
 }
 
 .home-video-bg {

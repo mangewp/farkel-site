@@ -42,7 +42,6 @@ function Home() {
             gap: '1.5rem',
             width: '90%',
             margin: '0 auto',
-            marginBottom: '1rem',
           }}
         >
           {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((index) => (
