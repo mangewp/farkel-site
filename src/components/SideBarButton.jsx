@@ -8,7 +8,7 @@ function SideBarButton({ href, children, background, style }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ background, ...style }}
+      style={{ '--bg-color': background, ...style }}
     >
       {children}
     </a>
