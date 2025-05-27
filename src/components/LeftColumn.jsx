@@ -18,17 +18,17 @@ export default function LeftColumn() {
       </h1>
       <div className="albums-list">
         <Album
-          image="src/assets/STAY UGLY.jpg"
+          image="/assets/STAY UGLY.jpg"
           button1={{ text: 'Spotify', link: 'https://open.spotify.com/' }}
           button2={{ text: 'Apple', link: 'https://music.apple.com/' }}
         />
         <Album
-          image="src/assets/HURRICANE HEART.jpg"
+          image="/assets/STAY UGLY.jpg"
           button1={{ text: 'Spotify', link: 'https://open.spotify.com/' }}
           button2={{ text: 'Apple', link: 'https://music.apple.com/' }}
         />
         <Album
-          image="src/assets/FAR FROM GONE.jpg"
+          image="/assets/STAY UGLY.jpg"
           button1={{ text: 'Spotify', link: 'https://open.spotify.com/' }}
           button2={{ text: 'Apple', link: 'https://music.apple.com/' }}
         />
