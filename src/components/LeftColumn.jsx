@@ -1,6 +1,6 @@
 import React from 'react';
 import SideBarButton from './SideBarButton';
-import Album from './Album.jsx';
+import Album from './Album';
 import './LeftColumn.css';
 
 export default function LeftColumn() {
