@@ -16,7 +16,7 @@
   z-index: 0;
   pointer-events: none;
   user-select: none;
-  filter: blur(8px); /* Add this for blur */
+  filter: blur(2px); /* Add this for blur */
 }
 
 .home-right-content {

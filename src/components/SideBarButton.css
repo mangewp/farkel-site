@@ -20,6 +20,7 @@
 
 @media (max-width: 1000px) {
 .sidebar-button {
-    width: 90%;
+    max-width: 60%;
+    padding: 1.5rem 0;
 }
 }

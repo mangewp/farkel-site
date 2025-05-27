@@ -4,29 +4,55 @@ import './Album.css';
 function Album({ image, button1, button2 }) {
   const [showButtons, setShowButtons] = useState(false);
 
+  // Detect touch device
+  const isTouchDevice = () =>
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+  const handleClick = () => {
+    if (isTouchDevice()) {
+      setShowButtons(!showButtons);
+    }
+  };
+
   return (
-    <div className="album-container" onClick={() => setShowButtons(!showButtons)}>
+    <div
+      className={`album-container${showButtons ? ' show-buttons' : ''}`}
+      onClick={handleClick}
+    >
       <img src={image} alt="Album" className="album-image" />
-      {showButtons && (
-        <div className="album-buttons-overlay" onClick={e => e.stopPropagation()}>
-          <a
-            href={button1.link}
-            className="album-round-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {button1.text}
-          </a>
-          <a
-            href={button2.link}
-            className="album-round-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {button2.text}
-          </a>
-        </div>
-      )}
+      <div
+        className="album-buttons-overlay"
+        style={{
+          pointerEvents: showButtons || !isTouchDevice() ? 'auto' : 'none',
+        }}
+        onClick={e => e.stopPropagation()}
+      >
+        <a
+          href={button1.link}
+          className="album-round-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/assets/spotify.png"
+            alt="Spotify"
+            style={{ width: 32, height: 32 }}
+          />
+        </a>
+        <a
+          href={button2.link}
+          className="album-round-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/assets/apple.png"
+            alt="Apple Music"
+            style={{ width: 32, height: 32 }}
+          />
+        </a>
+      </div>
     </div>
   );
 }

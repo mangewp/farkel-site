@@ -31,13 +31,22 @@
   gap: 1.5rem;
   transform: translate(-50%, -50%);
   z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.album-container:hover .album-buttons-overlay,
+.album-container.show-buttons .album-buttons-overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .album-round-button {
   width: 60px;
   height: 60px;
-  background: #222;
-  color: #fff;
+  background: #222222da;
+  color: #ffffff42;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -49,7 +58,23 @@
   transition: background 0.2s, transform 0.2s;
   border: 2px solid #fff;
 }
+
 .album-round-button:hover {
   background: #444;
   transform: scale(1.1);
+}
+
+@media (max-width: 1000px) {
+  .album-round-button {
+    width: 100px;
+    height: 100px;
+  }
+    .album-buttons-overlay {
+    gap: 8rem;
+  }
+
+  .album-container {
+    width: 80%;
+    align-self: center;
+  }
 }
