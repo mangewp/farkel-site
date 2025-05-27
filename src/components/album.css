@@ -1,0 +1,53 @@
+.album-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18)
+}
+
+.album-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.albums-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Adjust as needed */
+}
+
+.album-buttons-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  gap: 1.5rem;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.album-round-button {
+  width: 60px;
+  height: 60px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: background 0.2s, transform 0.2s;
+  border: 2px solid #fff;
+}
+.album-round-button:hover {
+  background: #444;
+  transform: scale(1.1);
+}

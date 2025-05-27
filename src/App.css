@@ -1,0 +1,68 @@
+/* Make body background and text color consistent */
+body {
+  background: #23272f;
+  color: #fff;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  font-family: "VT323", monospace;
+  
+}
+
+/* Responsive container for Home */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 400px) {
+  .home-container pre {
+    font-size: 0.5rem;
+    padding: 0 0.2rem;
+  }
+}
+
+/* Make headings responsive */
+.home-container h1 {
+  font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+  .home-container h1 {
+    font-size: 1.2rem;
+  }
+  .home-container pre {
+    font-size: 0.7rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+.cards-container {
+  min-height: 100vh;
+  padding: 0 1rem; /* Adds space on left/right for mobile */
+  box-sizing: border-box;
+}
+
+.about-card-inner img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .about-card-inner img {
+    max-width: 100%;
+  }
+}

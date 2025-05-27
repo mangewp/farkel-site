@@ -1,0 +1,25 @@
+.sidebar-button {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.sidebar-button:hover {
+  background: #555;
+}
+
+@media (max-width: 1000px) {
+.sidebar-button {
+    width: 90%;
+}
+}
