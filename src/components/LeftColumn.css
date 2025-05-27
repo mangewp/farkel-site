@@ -12,7 +12,7 @@
   overflow: auto;
   z-index: 10;
   position: sticky;
-  overflow-y: scroll;
+  overscroll-behavior-y: contain;
   max-height: 100vh;
 }
 
