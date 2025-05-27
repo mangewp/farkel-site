@@ -1,24 +1,9 @@
-.home-left {
-  width: 300px;
-  min-width: 220px;
-  background: #221b1b;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 10;
-}
 .home-root {
   display: flex;
   min-height: 100vh;
   background: #181818;
   color: #fff;
   font-family: sans-serif;
-  padding-left: 320px; /* Same as .home-left width */
 }
 
 .home-video-bg {
