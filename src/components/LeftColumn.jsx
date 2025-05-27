@@ -23,12 +23,12 @@ export default function LeftColumn() {
           button2={{ text: 'Apple', link: 'https://music.apple.com/' }}
         />
         <Album
-          image="/assets/STAY UGLY.jpg"
+          image="/assets/HURRICANE HEART.jpg"
           button1={{ text: 'Spotify', link: 'https://open.spotify.com/' }}
           button2={{ text: 'Apple', link: 'https://music.apple.com/' }}
         />
         <Album
-          image="/assets/STAY UGLY.jpg"
+          image="/assets/FAR FROM GONE.jpg"
           button1={{ text: 'Spotify', link: 'https://open.spotify.com/' }}
           button2={{ text: 'Apple', link: 'https://music.apple.com/' }}
         />
