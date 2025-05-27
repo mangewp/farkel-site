@@ -10,6 +10,9 @@ body {
   font-family: "VT323", monospace;
   
 }
+html, body {
+  overflow-x: hidden;
+}
 
 /* Responsive container for Home */
 .home-container {
