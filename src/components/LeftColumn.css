@@ -1,7 +1,7 @@
 .home-left {
   width: 300px;
   min-width: 220px;
-  background: #0a0606;
+  background: #221b1b;
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   overflow: auto;
   z-index: 10;
   position: sticky;
-  overscroll-behavior-y: contain;
+  overflow-y: scroll;
   max-height: 100vh;
 }
 
