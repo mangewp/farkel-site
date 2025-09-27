@@ -25,7 +25,7 @@ function Home() {
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UULFWlcH69OjzRNigqEFPBFRXw&modestbranding=1&rel=0&showinfo=0"
+          src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UULFyItalzbZQNszRn5vjg1q_A&modestbranding=1&rel=0&showinfo=0"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -60,7 +60,7 @@ function Home() {
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed?listType=playlist&list=UULFWlcH69OjzRNigqEFPBFRXw&index=${index}`}
+                src={`https://www.youtube.com/embed?listType=playlist&list=UULFyItalzbZQNszRn5vjg1q_A&index=${index}`}
                 title={`YouTube video player ${index}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
