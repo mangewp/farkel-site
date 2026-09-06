@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* --- Artwork as ground ------------------------------------------------ */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  /* Grade every cover to one palette so the hero reads as the site's, not
+     as whatever the sleeve happens to be. */
+  filter: grayscale(1) contrast(1.15) brightness(0.72);
+  transform: scale(1.06);
+}
+
+.hero-bg-grade {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 70% 20%, transparent 0%, rgba(10, 7, 6, 0.55) 55%, rgba(10, 7, 6, 0.95) 100%),
+    linear-gradient(to top, var(--bg) 2%, rgba(10, 7, 6, 0.55) 38%, rgba(10, 7, 6, 0.25) 100%),
+    linear-gradient(to right, rgba(255, 59, 31, 0.16), transparent 60%);
+}
+
+/* --- Content ---------------------------------------------------------- */
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  padding-block: calc(var(--nav-h) + 3rem) clamp(2.5rem, 6vw, 4.5rem);
+  padding-inline: max(var(--pad-x), env(safe-area-inset-left)) max(var(--pad-x), env(safe-area-inset-right));
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  font-size: var(--t-micro);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+/* Each fragment stays whole; only the row breaks. */
+.hero-kicker > span:not(.hero-kicker-dot) { white-space: nowrap; }
+
+.hero-kicker-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  flex: none;
+}
+
+/* Oversized and tight. The wordmark is the artwork here. */
+.hero-mark {
+  font-size: var(--t-hero);
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  margin-left: -0.04em;
+  /* line-height under 1 pulls the line box in tighter than the glyphs, so
+     ascenders spill above it. Reserve that overflow in em so the clearance
+     scales with the wordmark instead of breaking at wide viewports. */
+  padding-top: 0.18em;
+}
+
+.hero-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.hero-line {
+  max-width: 30ch;
+  color: var(--text-dim);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding-inline: 1.75rem;
+  border: 1px solid var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: var(--t-small);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.btn:hover { background: var(--text); color: var(--bg); }
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-primary:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+@media (max-width: 700px) {
+  .hero-foot { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { flex: 1 1 auto; }
+}

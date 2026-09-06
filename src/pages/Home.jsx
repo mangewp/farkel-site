@@ -1,79 +1,27 @@
-import React from 'react';
-import './Home.css';
-import LeftColumn from '../components/LeftColumn';
+import Nav from '../components/Nav';
+import Hero from '../components/Hero';
+import Marquee from '../components/Marquee';
+import ReleaseIndex from '../components/ReleaseIndex';
+import Videos from '../components/Videos';
+import PlatformLinks from '../components/PlatformLinks';
+import Footer from '../components/Footer';
+import { ARTIST } from '../data/links';
 
-function Home() {
+export default function Home() {
   return (
-    <div className="home-root">
-      {/* Left Section */}
-      <LeftColumn />
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <Nav />
 
-      {/* Right Section */}
-      <div className="home-right">
-      <video
-        className="home-video-bg"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/static.mp4" type="video/mp4" />
-      </video>
-      <div className="home-right-content">
-        <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>latest music video</h2>
-      <div style={{ width: '90%', aspectRatio: '16/9', background: '#000', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 2px 16px rgba(0,0,0,0.18)', marginBottom: '2rem' }}>
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UULFyItalzbZQNszRn5vjg1q_A&modestbranding=1&rel=0&showinfo=0"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ display: 'block', width: '100%', height: '100%' }}
-        ></iframe>
-      </div>
-        <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>more videos</h2>
-        <div
-          className='more-videos-grid'
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1.5rem',
-            width: '90%',
-            margin: '0 auto',
-          }}
-        >
-          {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((index) => (
-            <div
-              key={index}
-              style={{
-                width: '100%',
-                aspectRatio: '16/9',
-                background: '#000',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                boxShadow: '0 2px 16px rgba(0,0,0,0.18)',
-                paddingBottom: '5rem',
-              }}
-            >
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed?listType=playlist&list=UULFyItalzbZQNszRn5vjg1q_A&index=${index}`}
-                title={`YouTube video player ${index}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ display: 'block', width: '100%', height: '100%' }}
-              ></iframe>
-            </div>
-        ))}
-        </div>
-      </div>
-      </div>
-    </div>
+      <main id="main">
+        <Hero />
+        <Marquee text={ARTIST} />
+        <ReleaseIndex />
+        <Videos />
+        <PlatformLinks />
+      </main>
+
+      <Footer />
+    </>
   );
 }
-
-export default Home;

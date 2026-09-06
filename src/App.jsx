@@ -1,18 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './styles/tokens.css';
+import './styles/base.css';
+import StaticLayer from './components/StaticLayer';
 import Home from './pages/Home';
-import ScrollToTop from "./components/ScrollToTop";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    <>
+      <StaticLayer />
+      <div className="app-shell">
+        <Home />
+      </div>
+    </>
   );
 }
-
-export default App;

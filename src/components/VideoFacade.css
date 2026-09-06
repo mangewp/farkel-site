@@ -1,0 +1,80 @@
+.video-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-facade {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease);
+  /* One grade across every thumbnail so the grid reads as a single system
+     instead of six unrelated video stills. */
+  filter: grayscale(1) contrast(1.15) brightness(0.8);
+}
+
+.video-facade:hover img,
+.video-facade:focus-visible img {
+  transform: scale(1.04);
+  filter: none;
+}
+
+.video-facade-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  border: 2px solid var(--text);
+  color: var(--text);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.video-facade:hover .video-facade-play,
+.video-facade:focus-visible .video-facade-play {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.video-facade-title {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2rem 1rem 0.9rem;
+  font-size: var(--t-small);
+  background: linear-gradient(
+    to top,
+    rgba(10, 7, 6, 0.95) 0%,
+    rgba(10, 7, 6, 0.8) 50%,
+    rgba(10, 7, 6, 0) 100%
+  );
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

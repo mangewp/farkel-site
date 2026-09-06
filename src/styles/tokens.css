@@ -1,0 +1,43 @@
+:root {
+  color-scheme: dark;
+
+  /* Color. One theme lock, one accent. */
+  --bg: #16110f;
+  --surface: #221b1b;
+  --surface-2: #2b2322;
+  --text: #f4efe9;
+  --text-dim: #a89f98;
+  --accent: #ff3b1f;
+  --accent-ink: #16110f;
+  --line: #ffffff14;
+  --line-strong: #ffffff2b;
+
+  /* Brand gradients, carried over from the previous sidebar buttons. */
+  --g-youtube: linear-gradient(90deg, #c4302b 0%, #ff0000 100%);
+  --g-spotify: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
+  --g-apple: linear-gradient(90deg, #f5f5f7 0%, #fa233b 100%);
+  --g-instagram: linear-gradient(90deg, #fd5949 0%, #d6249f 50%, #285aeb 100%);
+
+  /* Type. Excrallik is the only face, so size carries the hierarchy. */
+  --t-hero: clamp(4rem, 17vw, 17rem);
+  --t-index: clamp(1.5rem, 4.2vw, 3.75rem);
+  --t-section: clamp(2rem, 5vw, 3.5rem);
+  --t-title: clamp(1.35rem, 2.4vw, 2rem);
+  --t-body: clamp(1rem, 1.1vw, 1.125rem);
+  --t-small: 0.875rem;
+  --t-micro: 0.75rem;
+
+  /* Space. */
+  --gap: clamp(1rem, 2vw, 1.75rem);
+  --pad-x: clamp(1.25rem, 4vw, 3.5rem);
+  --section-y: clamp(4rem, 10vw, 8rem);
+  --measure: 62ch;
+
+  /* Sharp. Rounded cards read as SaaS, not as a record sleeve. */
+  --radius: 0px;
+  --radius-sm: 0px;
+
+  --nav-h: 64px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur: 220ms;
+}
