@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Backup of the corrupt object store replaced during the redesign.
-# Safe to delete this directory and this rule once history looks right.
-.git.corrupt.bak/
