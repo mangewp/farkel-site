@@ -8,12 +8,21 @@
 }
 
 .static-layer video {
+  /* Hide native play overlays when mobile autoplay is unavailable. */
+  visibility: hidden;
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.075;
   filter: contrast(1.4);
   mix-blend-mode: screen;
+}
+
+.static-layer video.is-playing { visibility: visible; }
+
+.static-layer video::-webkit-media-controls,
+.static-layer video::-webkit-media-controls-start-playback-button {
+  display: none !important;
 }
 
 .static-layer-scanlines {

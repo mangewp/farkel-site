@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './StaticLayer.css';
 
 /**
@@ -8,6 +8,7 @@ import './StaticLayer.css';
  */
 export default function StaticLayer() {
   const ref = useRef(null);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
@@ -26,7 +27,21 @@ export default function StaticLayer() {
 
   return (
     <div className="static-layer" aria-hidden="true">
-      <video ref={ref} autoPlay loop muted playsInline preload="auto">
+      <video
+        ref={ref}
+        className={playing ? 'is-playing' : undefined}
+        autoPlay
+        loop
+        muted
+        playsInline
+        controls={false}
+        tabIndex={-1}
+        preload="auto"
+        onPlaying={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+        onError={() => setPlaying(false)}
+      >
         <source src="/static.mp4" type="video/mp4" />
       </video>
       <div className="static-layer-scanlines" />
