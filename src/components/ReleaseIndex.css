@@ -82,7 +82,9 @@
 
 .index-title {
   font-size: var(--t-index);
-  line-height: 1;
+  line-height: 1.2;
+  /* Keep the font's tall glyphs inside the ellipsis clipping box. */
+  padding-block: 0.15em;
   letter-spacing: -0.02em;
   min-width: 0;
   overflow: hidden;
