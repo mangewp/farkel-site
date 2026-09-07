@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import AppleEmbed from './AppleEmbed';
 import { releases } from '../data/releases';
 import './ReleaseIndex.css';
 
 /**
  * A catalogue, not a stack of cards. Each row is a typographic entry that
- * expands into a player in place, so the discography reads as a list at a
- * glance and still plays without leaving the page.
+ * expands into local album details and streaming links.
  */
 export default function ReleaseIndex() {
   const [openId, setOpenId] = useState(releases[0].id);
@@ -33,7 +31,9 @@ export default function ReleaseIndex() {
                 className="index-trigger"
                 aria-expanded={open}
                 aria-controls={panelId}
-                onClick={() => setOpenId(open ? null : release.id)}
+                onClick={() => {
+                  setOpenId(open ? null : release.id);
+                }}
               >
                 <span className="index-num">{String(i + 1).padStart(2, '0')}</span>
 
@@ -57,19 +57,22 @@ export default function ReleaseIndex() {
 
               <div className="index-panel" id={panelId} hidden={!open}>
                 <div className="index-panel-inner">
-                  <AppleEmbed appleId={release.appleId} title={release.title} />
-
+                  <img className="index-cover" src={release.art} alt={`${release.title} album cover`} width="1000" height="1000" loading="lazy" decoding="async" />
+                  <div className="index-details">
+                    <p className="eyebrow">Album / {release.year} / {release.tracks} tracks</p>
+                    <p className="index-album-title">{release.title}</p>
                   <div className="index-links">
                     <a href={release.apple} target="_blank" rel="noreferrer noopener">
                       Apple Music
                       <span className="visually-hidden"> (opens in a new tab)</span>
                     </a>
                     {release.spotify && (
-                      <a href={release.spotify} target="_blank" rel="noreferrer noopener">
+                      <a className="index-stream-primary" href={release.spotify} target="_blank" rel="noreferrer noopener">
                         Spotify
                         <span className="visually-hidden"> (opens in a new tab)</span>
                       </a>
                     )}
+                  </div>
                   </div>
                 </div>
               </div>

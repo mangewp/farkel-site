@@ -1,6 +1,7 @@
 import { ARTIST, links } from '../data/links';
 import { latest, releases } from '../data/releases';
 import './Hero.css';
+import HeroVideo from './HeroVideo';
 
 export default function Hero() {
   return (
@@ -8,8 +9,9 @@ export default function Hero() {
       {/* The artwork is the page, not a card sitting on it. */}
       <div className="hero-bg" aria-hidden="true">
         <img src={latest.art} alt="" width="1000" height="1000" fetchPriority="high" />
-        <div className="hero-bg-grade" />
       </div>
+      <HeroVideo />
+      <div className="hero-bg-grade" aria-hidden="true" />
 
       <div className="hero-inner">
         <p className="hero-kicker">
